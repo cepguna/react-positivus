@@ -17,3 +17,10 @@ export { default as IL_SERVICE3 } from "../assets/images/il_service3.svg";
 export { default as IL_SERVICE4 } from "../assets/images/il_service4.svg";
 export { default as IL_SERVICE5 } from "../assets/images/il_service5.svg";
 export { default as IL_SERVICE6 } from "../assets/images/il_service6.svg";
+
+export { default as TEAM1 } from "../assets/images/team1.png";
+export { default as TEAM2 } from "../assets/images/team2.png";
+export { default as TEAM3 } from "../assets/images/team3.png";
+export { default as TEAM4 } from "../assets/images/team4.png";
+export { default as TEAM5 } from "../assets/images/team5.png";
+export { default as TEAM6 } from "../assets/images/team6.png";
