@@ -18,7 +18,7 @@ const LOGOS = [
 
 export const LogoSection = () => {
 	return (
-		<div className="custom-container pb-20">
+		<div className="custom-container pb-40">
 			<div className="mt-14 flex flex-wrap items-center justify-center gap-14">
 				{LOGOS.map((logo, i) => (
 					<img src={logo} key={`logo-${i}`} alt={`LOGO-${i}`} />
