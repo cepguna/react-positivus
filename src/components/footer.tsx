@@ -1,21 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import {
-	DribbbleIcon,
-	GithubIcon,
-	TwitchIcon,
-	TwitterIcon,
-} from "lucide-react";
+import { Facebook, Linkedin, TwitterIcon } from "lucide-react";
 import { Logo } from "./ui/logo";
 
 const footeras = [
 	{
-		title: "Overview",
+		title: "About Us",
 		href: "#",
 	},
 	{
-		title: "Features",
+		title: "Services",
+		href: "#",
+	},
+	{
+		title: "Use Cases",
 		href: "#",
 	},
 	{
@@ -23,15 +22,7 @@ const footeras = [
 		href: "#",
 	},
 	{
-		title: "Careers",
-		href: "#",
-	},
-	{
-		title: "Help",
-		href: "#",
-	},
-	{
-		title: "Privacy",
+		title: "Blog",
 		href: "#",
 	},
 ];
@@ -39,7 +30,7 @@ const footeras = [
 export const Footer = () => {
 	return (
 		<footer>
-			<div className="custom-container bg-black rounded-t-4xl text-white">
+			<div className="custom-container bg-gray-900 rounded-t-4xl text-white">
 				<div className=" py-12 gap-x-8 gap-y-10 px-6 xl:px-0">
 					<div className="flex items-center justify-between">
 						{/* Logo */}
@@ -48,7 +39,7 @@ export const Footer = () => {
 						<ul className="flex items-center gap-4 flex-wrap">
 							{footeras.map(({ title, href }) => (
 								<li key={title}>
-									<a href={href} className=" hover:text-foreground">
+									<a href={href} className=" hover:no-underline underline">
 										{title}
 									</a>
 								</li>
@@ -57,16 +48,13 @@ export const Footer = () => {
 
 						<div className="flex items-center gap-5 ">
 							<a href="#" target="_blank">
+								<Linkedin className="h-5 w-5" />
+							</a>
+							<a href="#" target="_blank">
+								<Facebook className="h-5 w-5" />
+							</a>
+							<a href="#" target="_blank">
 								<TwitterIcon className="h-5 w-5" />
-							</a>
-							<a href="#" target="_blank">
-								<DribbbleIcon className="h-5 w-5" />
-							</a>
-							<a href="#" target="_blank">
-								<TwitchIcon className="h-5 w-5" />
-							</a>
-							<a href="#" target="_blank">
-								<GithubIcon className="h-5 w-5" />
 							</a>
 						</div>
 					</div>
@@ -83,22 +71,35 @@ export const Footer = () => {
 						</div>
 						<div className="w-[40%] h-full bg-gray-800 p-5 rounded-2xl">
 							<form className="flex items-center gap-2">
-								<Input type="email" placeholder="Enter your email" />
-								<Button>Subscribe to news</Button>
+								<Input
+									className="bg-transparent border-white placeholder:text-gray-400"
+									type="email"
+									placeholder="Enter your email"
+								/>
+								<Button className="bg-yellow-200 text-black hover:bg-yellow-400">
+									Subscribe to news
+								</Button>
 							</form>
 						</div>
 					</div>
 				</div>
 				<Separator />
-				<div className="py-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-0">
+				<div className="py-8 flex flex-col-reverse sm:flex-row items-center gap-x-2 gap-y-5 px-6 xl:px-0">
 					{/* Copyright */}
 					<span className="">
 						&copy; {new Date().getFullYear()}{" "}
 						<a href="/" target="_blank">
-              Positivus
+							Positivus
 						</a>
 						. All rights reserved.
 					</span>
+					<a
+						href="/"
+						target="_blank"
+						className="underline hover:no-underline ml-8"
+					>
+						Privacy Policy
+					</a>
 				</div>
 			</div>
 		</footer>
