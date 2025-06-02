@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { TitleSection } from "./title-section";
 
 const CONTENT = [
 	"For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.",
@@ -9,21 +10,21 @@ const CONTENT = [
 
 export const CaseStudioSection = () => {
 	return (
-		<div className="custom-container">
-			<div className="flex items-center gap-4 mb-16">
-				<h5 className="section-title inline">Case Studies</h5>
-				<p className="inline-block w-[50%] section-description">
-					At our digital marketing agency, we offer a range of services to help
-					businesses grow and succeed online. These services include:
-				</p>
-			</div>
+		<div className="custom-container pb-40">
+			<TitleSection
+				title="Case Studies"
+				description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
+			/>
 			<div className="bg-gray-900 rounded-3xl px-10 py-16 gap-10 grid grid-cols-3">
 				{CONTENT.map((item, i) => (
-					<div key={`case-${i}`} className={cn(i !== CONTENT.length - 1 && "border-r border-white")}>
-						<p className="text-white text-sm font-light">{item}</p>
-						<div className="flex items-center gap-3 text-yellow-200 mt-4">
+					<div
+						key={`case-${i}`}
+						className={cn(i !== CONTENT.length - 1 && "border-r border-white")}
+					>
+						<p className="text-white font-light">{item}</p>
+						<div className="flex items-center gap-2 text-lg text-yellow-200 mt-4 cursor-pointer" role="button">
 							<a>Learn More</a>
-							<ExternalLink />
+							<ArrowRight className="rotate-[-30deg]" />
 						</div>
 					</div>
 				))}
