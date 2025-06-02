@@ -1,11 +1,12 @@
 import { LOGO_BLACK, LOGO_WHITE } from "@/constants/images";
+import { cn } from "@/lib/utils";
 
-export const Logo = ({ type = 'dark' }: { type?: "light" | "dark" }) => {
+export const Logo = ({ type = 'dark', className }: { type?: "light" | "dark", className?: string }) => {
 	return (
 		<img
 			src={type === "dark" ? LOGO_BLACK : LOGO_WHITE}
 			alt="logo"
-			className="w-[120px] h-auto"
+			className={cn("w-[120px] h-auto", className)}
 		/>
 	);
 };
