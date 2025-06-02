@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Locate, Mail, Phone } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,6 +13,10 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { TitleSection } from "./title-section";
+import { IL_CONTACT } from "@/constants/images";
+import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
+import { Label } from "./ui/label";
 
 const FormSchema = z.object({
 	name: z
@@ -50,117 +53,94 @@ export const ContactSection = () => {
 
 	return (
 		<section
-			className="py-12 sm:py-16 lg:py-20 bg-background"
+			className="pb-40 custom-container"
 			role="region"
 			aria-label="Contact"
 		>
-			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-					{/* Contact Information */}
-					<article className="max-w-prose">
-						{/* Tagline */}
-						<p className="text-primary text-base sm:text-lg font-semibold uppercase tracking-wide">
-							Tagline
-						</p>
-						{/* Main Heading */}
-						<h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-foreground">
-							Contact Us
-						</h2>
-						{/* Description */}
-						<p className="mt-6 text-base sm:text-lg text-muted-foreground">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit
-						</p>
-						{/* Contact Details */}
-						<address className="mt-10 space-y-4 not-italic">
-							<div className="flex items-center gap-4">
-								<Mail className="w-5 h-5 text-primary" aria-hidden="true" />
-								<a
-									href="mailto:joona@code.com"
-									className="text-base text-muted-foreground hover:text-primary"
-								>
-									joona@code.com
-								</a>
-							</div>
-							<div className="flex items-center gap-4">
-								<Phone className="w-5 h-5 text-primary" aria-hidden="true" />
-								<a
-									href="tel:+15550000000"
-									className="text-base text-muted-foreground hover:text-primary"
-								>
-									+1 (555) 000-0000
-								</a>
-							</div>
-							<div className="flex items-center gap-4">
-								<Locate className="w-5 h-5 text-primary" aria-hidden="true" />
-								<span className="text-base text-muted-foreground">
-									123 Sample St, Sydney NSW 2000 AU
-								</span>
-							</div>
-						</address>
-					</article>
+			<TitleSection
+				title="Contact Us"
+				description="Connect with Us: Let's Discuss Your Digital Marketing Needs"
+			/>
+			<div className="bg-muted py-10 px-14 rounded-4xl flex gap-8 lg:gap-12 relative">
+				{/* Contact Information */}
 
-					{/* Contact Form */}
-					<aside className="w-full max-w-md lg:max-w-lg">
-						<Form {...form}>
-							<form
-								onSubmit={form.handleSubmit(onSubmit)}
-								className="space-y-6"
-								role="form"
-								aria-label="Contact form"
-							>
-								<FormField
-									control={form.control}
-									name="name"
-									render={({ field }) => (
-										<FormItem>
-											<FormLabel>Name</FormLabel>
-											<FormControl>
-												<Input {...field} aria-describedby="name-error" />
-											</FormControl>
-											<FormMessage id="name-error" />
-										</FormItem>
-									)}
-								/>
-								<FormField
-									control={form.control}
-									name="email"
-									render={({ field }) => (
-										<FormItem>
-											<FormLabel>Email</FormLabel>
-											<FormControl>
-												<Input
-													type="email"
-													{...field}
-													aria-describedby="email-error"
-												/>
-											</FormControl>
-											<FormMessage id="email-error" />
-										</FormItem>
-									)}
-								/>
-								<FormField
-									control={form.control}
-									name="message"
-									render={({ field }) => (
-										<FormItem>
-											<FormLabel>Message</FormLabel>
-											<FormControl>
-												<Textarea
-													className="min-h-[100px] sm:min-h-[120px]"
-													placeholder="Type your message..."
-													{...field}
-													aria-describedby="message-error"
-												/>
-											</FormControl>
-											<FormMessage id="message-error" />
-										</FormItem>
-									)}
-								/>
-								<Button type="submit">Submit</Button>
-							</form>
-						</Form>
-					</aside>
-				</div>
+				{/* Contact Form */}
+				<aside className="w-[70%]">
+					<Form {...form}>
+						<form
+							onSubmit={form.handleSubmit(onSubmit)}
+							className="space-y-6"
+							role="form"
+							aria-label="Contact form"
+						>
+							<RadioGroup className="flex" defaultValue="comfortable">
+								<div className="flex items-center gap-3">
+									<RadioGroupItem value="default" id="r1" />
+									<Label htmlFor="r1">Say Hi</Label>
+								</div>
+								<div className="flex items-center gap-3">
+									<RadioGroupItem value="comfortable" id="r2" />
+									<Label htmlFor="r2">Get a Quote</Label>
+								</div>
+							</RadioGroup>
+							<FormField
+								control={form.control}
+								name="name"
+								render={({ field }) => (
+									<FormItem>
+										<FormLabel>Name</FormLabel>
+										<FormControl>
+											<Input {...field} aria-describedby="name-error" />
+										</FormControl>
+										<FormMessage id="name-error" />
+									</FormItem>
+								)}
+							/>
+							<FormField
+								control={form.control}
+								name="email"
+								render={({ field }) => (
+									<FormItem>
+										<FormLabel>Email</FormLabel>
+										<FormControl>
+											<Input
+												type="email"
+												{...field}
+												aria-describedby="email-error"
+											/>
+										</FormControl>
+										<FormMessage id="email-error" />
+									</FormItem>
+								)}
+							/>
+							<FormField
+								control={form.control}
+								name="message"
+								render={({ field }) => (
+									<FormItem>
+										<FormLabel>Message</FormLabel>
+										<FormControl>
+											<Textarea
+												className="bg-white border-black min-h-[100px] sm:min-h-[120px]"
+												placeholder="Type your message..."
+												{...field}
+												aria-describedby="message-error"
+											/>
+										</FormControl>
+										<FormMessage id="message-error" />
+									</FormItem>
+								)}
+							/>
+							<Button className="w-full" size={"lg"} type="submit">
+								Send Message
+							</Button>
+						</form>
+					</Form>
+				</aside>
+
+				<article className="absolute right-[-250px] w-[500px]">
+					<img src={IL_CONTACT} className="w-[90%]" />
+				</article>
 			</div>
 		</section>
 	);
