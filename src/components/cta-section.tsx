@@ -3,11 +3,11 @@ import { IL_CTA } from "@/constants/images";
 
 export const CTASection = () => {
 	return (
-		<div className="custom-container relative mb-20">
+		<div className="custom-container relative mb-40">
 			<div className="px-10 md:px-14 bg-gray-100 h-[300px] rounded-4xl flex items-center justify-between">
 				<div className="flex flex-col justify-center space-y-4 max-w-[50%]">
 					<div className="space-y-2">
-						<h2 className="font-bold tracking-tighter text-4xl">
+						<h2 className="font-semibold tracking-tighter text-4xl">
 							Let’s make things happen
 						</h2>
 						<p className="text-muted-foreground">
