@@ -1,117 +1,84 @@
 import { Button } from "@/components/ui/button";
-import { DribbbleIcon, TwitchIcon, TwitterIcon } from "lucide-react";
+import { Linkedin } from "lucide-react";
+import { TitleSection } from "./title-section";
+import { TEAM1, TEAM2, TEAM3, TEAM4, TEAM5, TEAM6 } from "@/constants/images";
 
 const teamMembers = [
 	{
 		name: "John Doe",
 		title: "Founder & CEO",
-		bio: "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-		imageUrl:
-			"https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=600",
+		bio: "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
+		imageUrl: TEAM1,
 	},
 	{
 		name: "Jane Doe",
-		title: "Engineering Manager",
-		bio: "Lead engineering teams at Figma, Pitch, and Protocol Labs.",
-		imageUrl:
-			"https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
-	},
-	{
-		name: "Bob Smith",
-		title: "Product Manager",
-		bio: "Former PM for Linear, Lambda School, and On Deck.",
-		imageUrl:
-			"https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=600",
-	},
-	{
-		name: "Peter Johnson",
-		title: "Frontend Developer",
-		bio: "Former frontend dev for Linear, Coinbase, and Postscript.",
-		imageUrl:
-			"https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=600",
-	},
-	{
-		name: "David Lee",
-		title: "Backend Developer",
-		bio: "Lead backend dev at Clearbit. Former Clearbit and Loom.",
-		imageUrl:
-			"https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600",
-	},
-	{
-		name: "Sarah Williams",
-		title: "Product Designer",
-		bio: "Founding design team at Figma. Former Pleo, Stripe, and Tile.",
-		imageUrl:
-			"https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=600",
+		title: "Director of Operations",
+		bio: "7+ years of experience in project management and team leadership. Strong organizational and communication skills",
+		imageUrl: TEAM2,
 	},
 	{
 		name: "Michael Brown",
-		title: "UX Researcher",
-		bio: "Lead user research for Slack. Contractor for Netflix and Udacity.",
-		imageUrl:
-			"https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=600",
+		title: "Senior SEO Specialist",
+		bio: "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
+		imageUrl: TEAM3,
 	},
 	{
-		name: "Elizabeth Johnson",
-		title: "Customer Success",
-		bio: "Lead CX at Wealthsimple. Former PagerDuty and Sqreen.",
-		imageUrl:
-			"https://images.pexels.com/photos/2613260/pexels-photo-2613260.jpeg?auto=compress&cs=tinysrgb&w=600",
+		name: "Emily Johnson",
+		title: "PPC Manager",
+		bio: "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
+		imageUrl: TEAM4,
+	},
+	{
+		name: "Brian Williams",
+		title: "Social Media Specialist",
+		bio: "4+ years of experience in social media marketing. Proficient in creating and scheduling content, analyzing metrics, and building engagement",
+		imageUrl: TEAM5,
+	},
+	{
+		name: "Sarah Kim",
+		title: "Content Creator",
+		bio: "2+ years of experience in writing and editing Skilled in creating compelling, SEO-optimized content for various industries",
+		imageUrl: TEAM6,
 	},
 ];
 
 export const TeamSection = () => {
 	return (
-		<div className="flex flex-col justify-center py-8 sm:py-16 px-6 lg:px-8 max-w-screen-xl mx-auto gap-16">
-			<div className="text-center max-w-2xl mx-auto">
-				<b className="text-center text-muted-foreground text-base font-semibold">
-					We&apos;re hiring!
-				</b>
-				<h2 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight">
-					Meet Our Team
-				</h2>
-				<p className="mt-6 text-base sm:text-lg">
-					Our philosophy is simple — hire a team of diverse, passionate people
-					and foster a culture that empowers you to do you best work.
-				</p>
-				<div className="mt-8 flex flex-col sm:flex-row-reverse sm:justify-center gap-3">
-					<Button size="lg">Open Positions</Button>
-					<Button size="lg" variant="outline">
-						About Us
-					</Button>
-				</div>
-			</div>
+		<div className="custom-container mb-40">
+			<TitleSection
+				title="Team"
+				description="Meet the skilled and experienced team behind our successful digital marketing strategies"
+			/>
 
-			<div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-12">
+			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 				{teamMembers.map((member) => (
 					<div
 						key={member.name}
-						className="flex flex-col items-center text-center bg-accent py-8 px-6 rounded-lg"
+						className="relative border border-black rounded-4xl shadow-[3px_6px_0px_rgba(0,0,0,1)] flex flex-col items-start bg-white py-8 px-6"
 					>
-						<img
-							src={member.imageUrl}
-							alt={member.name}
-							className="shrink-0 h-16 w-16 sm:h-20 sm:w-20 rounded-full object-cover bg-accent"
-							width={120}
-							height={120}
-						/>
-						<h3 className="mt-5 text-lg font-semibold">{member.name}</h3>
-						<p className="text-muted-foreground text-sm">{member.title}</p>
-						<p className="mt-2 mb-6">{member.bio}</p>
-						<div className="mt-auto flex items-center gap-4">
-							<a href="#" target="_blank">
-								<TwitterIcon className="stroke-muted-foreground h-5 w-5" />
-							</a>
-							<a href="#" target="_blank">
-								<DribbbleIcon className="stroke-muted-foreground h-5 w-5" />
-							</a>
-							<a href="#" target="_blank">
-								<TwitchIcon className="stroke-muted-foreground h-5 w-5" />
-							</a>
+						<div className="absolute right-6 top-8">
+							<div className="bg-black text-yellow-200 rounded-full text-2xl p-2 h-10 w-10">
+								<Linkedin className="" />
+							</div>
 						</div>
+						<div className="flex items-end gap-4">
+							<img
+								src={member.imageUrl}
+								alt={member.name}
+								className="shrink-0 h-16 w-16 sm:h-20 sm:w-20 rounded-full object-cover bg-accent"
+								width={120}
+								height={120}
+							/>
+							<div>
+								<h3 className="mt-5 text-lg font-semibold">{member.name}</h3>
+								<p className="text-muted-foreground text-sm">{member.title}</p>
+							</div>
+						</div>
+						<p className="mt-2">{member.bio}</p>
 					</div>
 				))}
 			</div>
+      <Button className="mt-4 float-right px-10" size={'lg'}>See all team</Button>
 		</div>
 	);
 };
