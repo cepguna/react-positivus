@@ -73,13 +73,13 @@ export const ServicesSection = () => {
 							feature.background,
 						)}
 					>
-						<div className="flex flex-col justify-between">
+						<div className="flex flex-col justify-between gap-4">
 							<div>
 								{feature.title.map((item, ii) => (
 									<div key={`${item}-${ii}`}>
 										<span
 											className={cn(
-												"text-2xl font-semibold bg-white text-gray-900 p-1 rounded-lg",
+												"text-xl sm:text-2xl font-semibold bg-white text-gray-900 p-1 rounded-lg",
 												feature.background === "bg-gray-100" && "bg-yellow-200",
 												feature.background === "bg-black" &&
 													i === 5 &&
@@ -121,7 +121,7 @@ export const ServicesSection = () => {
 								</span>
 							</div>
 						</div>
-						<img src={feature.image} alt={`img-service-${i}`} />
+						<img src={feature.image} alt={`img-service-${i}`} className="w-[40%]" />
 					</div>
 				))}
 			</div>

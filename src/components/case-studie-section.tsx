@@ -10,25 +10,32 @@ const CONTENT = [
 
 export const CaseStudioSection = () => {
 	return (
-		<div className="custom-container pb-40">
+		<section className="custom-container mb-24 sm:mb-32 px-4 sm:px-6">
 			<TitleSection
 				title="Case Studies"
-				description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
+				description="Explore how our digital marketing strategies have driven measurable results for businesses across various industries."
 			/>
-			<div className="bg-gray-900 rounded-3xl px-10 py-16 gap-10 grid grid-cols-3">
+			<div className="bg-gray-900 rounded-3xl px-6 sm:px-10 py-10 sm:py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 				{CONTENT.map((item, i) => (
-					<div
+					<article
 						key={`case-${i}`}
-						className={cn(i !== CONTENT.length - 1 && "border-r border-white")}
+						className={cn(
+							"flex flex-col",
+							i !== CONTENT.length - 1 &&
+								"border-r-0 border-white sm:border-r-0  pr-0 lg:pr-6 border-b lg:border-r lg:border-b-0 pb-6 lg:pb-0",
+						)}
 					>
-						<p className="text-white font-light">{item}</p>
-						<div className="flex items-center gap-2 text-lg text-yellow-200 mt-4 cursor-pointer" role="button">
-							<a>Learn More</a>
-							<ArrowRight className="rotate-[-30deg]" />
-						</div>
-					</div>
+						<p className="text-white font-light text-base sm:text-lg">{item}</p>
+						<button
+							className="flex items-center gap-2 text-yellow-200 mt-4 text-base sm:text-lg"
+							aria-label={`Learn more about case study ${i + 1}`}
+						>
+							<span>Learn More</span>
+							<ArrowRight className="rotate-[-30deg] w-5 h-5" />
+						</button>
+					</article>
 				))}
 			</div>
-		</div>
+		</section>
 	);
 };

@@ -50,7 +50,7 @@ export const TeamSection = () => {
 				description="Meet the skilled and experienced team behind our successful digital marketing strategies"
 			/>
 
-			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 				{teamMembers.map((member) => (
 					<div
 						key={member.name}
@@ -78,7 +78,7 @@ export const TeamSection = () => {
 					</div>
 				))}
 			</div>
-      <Button className="mt-4 float-right px-10" size={'lg'}>See all team</Button>
+      <Button className="mt-8 float-right px-10" size={'lg'}>See all team</Button>
 		</div>
 	);
 };

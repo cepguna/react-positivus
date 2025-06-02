@@ -53,7 +53,7 @@ export const ContactSection = () => {
 
 	return (
 		<section
-			className="pb-40 custom-container"
+			className="pb-40 custom-container overflow-hidden"
 			role="region"
 			aria-label="Contact"
 		>
@@ -61,11 +61,11 @@ export const ContactSection = () => {
 				title="Contact Us"
 				description="Connect with Us: Let's Discuss Your Digital Marketing Needs"
 			/>
-			<div className="bg-muted py-10 px-14 rounded-4xl flex gap-8 lg:gap-12 relative">
+			<div className="bg-muted py-10 px-6 sm:px-14 rounded-4xl flex gap-8 lg:gap-12 relative">
 				{/* Contact Information */}
 
 				{/* Contact Form */}
-				<aside className="w-[70%]">
+				<aside className="w-full sm:w-[70%] relative z-10">
 					<Form {...form}>
 						<form
 							onSubmit={form.handleSubmit(onSubmit)}
@@ -138,7 +138,7 @@ export const ContactSection = () => {
 					</Form>
 				</aside>
 
-				<article className="absolute right-[-250px] w-[500px]">
+				<article className="absolute right-[-250px] w-[500px] z-0">
 					<img src={IL_CONTACT} className="w-[90%]" />
 				</article>
 			</div>

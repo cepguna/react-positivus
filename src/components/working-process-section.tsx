@@ -55,7 +55,7 @@ export const WorkingProcessSection = () => {
 					onValueChange={(v) => setActive(v)}
 					type="single"
 					collapsible
-					className="flex flex-col gap-4"
+					className="flex flex-col gap-6"
 					defaultValue={active}
 				>
 					{STEPS.map((step, index) => (
@@ -75,8 +75,8 @@ export const WorkingProcessSection = () => {
 								)}
 							>
 								<div className="flex items-center gap-4">
-									<span className="text-4xl">0{index + 1}</span>
-									<span className="text-2xl">{step.label}</span>
+									<span className="text-3xl sm:text-4xl">0{index + 1}</span>
+									<span className="text-xl sm:text-2xl">{step.label}</span>
 								</div>
 								<div className="bg-white p-2 rounded-full border border-black">
 									{`index-${index}` === active ? (

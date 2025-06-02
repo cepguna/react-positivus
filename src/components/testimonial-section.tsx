@@ -73,7 +73,7 @@ export const TestimonialSection = () => {
 				title="Testimonials"
 				description="Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services"
 			/>
-			<div className="bg-gray-900 py-24 rounded-4xl">
+			<div className="bg-gray-900 px-8 lg:px-0 py-24 rounded-4xl">
 				<Carousel setApi={setApi} className="w-full">
 					<CarouselContent>
 						{TESTIMONIAL.map((testimoni, index) => (

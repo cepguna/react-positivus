@@ -125,7 +125,7 @@
     @apply max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   .section-title {
-    @apply text-4xl bg-yellow-200 text-gray-900 p-1 rounded-lg
+    @apply text-2xl sm:text-3xl md:text-4xl bg-yellow-200 text-gray-900 p-1 rounded-lg
   }
 
   .section-description {
